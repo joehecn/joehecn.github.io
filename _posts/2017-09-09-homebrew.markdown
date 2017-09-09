@@ -1,0 +1,13 @@
+---
+layout: post
+title: "homebrew"
+date: 2017-09-09 15:58:50 +0800
+categories: jekyll update
+---
+``` bash
+brew update          # 更新 Homebrew 的信息
+brew outdated        # 看一下哪些软件可以升级
+brew upgrade <xxx>   # 如果不是所有的都要升级，那就这样升级指定的
+brew upgrade         # 全部升级
+brew cleanup         # 如果都要升级，直接升级完然后清理干净
+```

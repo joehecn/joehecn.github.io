@@ -1,5 +1,5 @@
 ---
 layout: post
 title:  "centos"
-categories: server
+categories: centos
 ---

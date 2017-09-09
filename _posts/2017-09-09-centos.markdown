@@ -3,3 +3,14 @@ layout: post
 title:  "centos"
 categories: centos
 ---
+
+# ssh
+``` bash
+ssh root@x.x.x.x -i /xx/xxx.pem
+```
+# yum
+``` bash
+yum clean all
+yum list
+yum upgrade
+```

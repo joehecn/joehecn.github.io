@@ -2,7 +2,7 @@
 layout: post
 title: "homebrew"
 date: 2017-09-09 15:58:50 +0800
-categories: jekyll update
+categories: jekyll
 ---
 ``` bash
 brew update          # 更新 Homebrew 的信息

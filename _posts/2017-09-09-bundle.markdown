@@ -1,0 +1,9 @@
+---
+layout: post
+title: "bundle"
+date: 2017-09-09 17:43:20 +0800
+categories: jekyll
+---
+``` bash
+bundle update # 更新
+```

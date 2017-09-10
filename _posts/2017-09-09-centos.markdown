@@ -3,14 +3,52 @@ layout: post
 title:  "centos"
 categories: centos
 ---
-
 # ssh
+1. 开通阿里云Ecs实例, 最新CentOS7.3 64位, 密钥对登录
 ``` bash
+# On MacOS
+chmod 400 /xx/xxx.pem
 ssh root@x.x.x.x -i /xx/xxx.pem
 ```
+2. 改默认 ssh 22端口 为 xxx
+   - 阿里云控制台 -> ECS -> 安全组 -> 配置规则
+   - CentOS 中修改 /etc/ssh/sshd_config 中的 Port
+   - 重启sshd服务
+``` bash
+ssh -p xxx root@x.x.x.x -i /xx/xxx.pem
+vi /etc/ssh/sshd_config
+# Port 22 这行去掉注释 改为 其它端口
+systemctl restart sshd.service # 重启sshd服务
+systemctl status sshd.service #查看ssh服务的状态
+```
+3. 添加 新用户 ssh 和 禁止root用户 ssh
+   - 创建用户 adduser xxx
+   - 添加目录 mkdir /home/xxx/.ssh
+   - cp /root/.ssh/authorized_keys /home/xxx/.ssh/
+   - 权限设置
+     - chown -R xxx:xxx /home/xxx
+     - chmod 700 /home/xxx
+     - chmod 700 /home/xxx/.ssh
+     - chmod 644 /home/xxx/.ssh/authorized_keys
+   - vi /etc/ssh/sshd_config
+     - RSAAuthentication yes
+     - PubkeyAuthentication yes
+   - 重启sshd服务
+4. 禁止root用户 ssh
+   - su root
+   - vi /etc/ssh/sshd_config
+     - PermitRootLogin no
+   - 重启sshd服务
+5. xxx sudo
+   - su root
+   - chmod u+w /etc/sudoers
+   - vi /etc/sudoers
+   - xxx   ALL=(ALL)       NOPASSWD:ALL
+   - chmod u-w /etc/sudoers
 # yum
 ``` bash
+# On CentOS
 yum clean all
 yum list
-yum upgrade
+sudo yum upgrade
 ```

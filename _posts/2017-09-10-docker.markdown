@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "docker"
+categories: docker
+---
+# CentOS
+[Get Docker CE for CentOS](https://docs.docker.com/engine/installation/linux/docker-ce/centos/)
+
+``` bash
+# 使用存储库进行安装
+# 设置存储库
+# 1 安装所需的软件包
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# 2 设置稳定版本库
+sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+# 安装DOCKER CE
+# 1 更新yum包索引
+sudo yum makecache fast
+# 2 安装最新版本的Docker CE
+sudo yum install docker-ce
+# 3 启动Docker
+sudo systemctl start docker
+```

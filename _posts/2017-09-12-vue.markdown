@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "vue"
+categories: vue
+---
+# vue-cli
+[in github](https://github.com/vuejs/vue-cli)
+``` bash
+ls $(npm root -g)
+npm install -g vue-cli
+```
+# vuejs-templates
+[in github](https://github.com/vuejs-templates)
+``` bash
+vue init webpack my-project
+cd my-project
+npm install
+npm run dev
+```

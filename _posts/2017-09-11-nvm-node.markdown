@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "nvm node"
+categories: node
+---
+[nvm in github](https://github.com/creationix/nvm)
+# 安装或更新
+``` bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v[x.xx.x]/install.sh | bash
+```
+# node
+``` bash
+nvm list
+nvm install node # 安装最新版本
+nvm alias default vx.x.x
+nvm uninstall vx.x.x
+```
